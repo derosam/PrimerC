@@ -1,16 +1,32 @@
-/* Sacar la hipotenusa de un triangulo rectangulo,
-pidiendo al usuario el valor de los 2 catetos*/
-
 #include <stdio.h>
-#include <math.h>
 
-int main(){
-    float cateto1,cateto2,hipotenusa;
-    printf("Escribe los valores de los catetos\n");
-    scanf("%f %f",&cateto1,&cateto2);
+//* Esta Funcion Recibe un Array y lo llena
+//! Nota que no se indica el numero de indices que recibira, se hace con otra variable
 
-    hipotenusa = sqrt(pow(cateto1,2)+ pow(cateto2,2));
-    printf("\nEl valor de la hipotenusa es: %.2f",hipotenusa);
+void llenarArray(int Array[],int dimension){
+    for(int i = 0; i<dimension;i++){
+        printf("\nDame el valor [%d] del array",i);
+        scanf("%d",&Array[i]);
+    }
+}
+
+
+int main() {
+    int c;
+    printf("\nDame el valor del array");
+    scanf("%i",&c);
+
+    int miVector[c];
+    //* Solo pasamos el nombre del array y su dimension
+    llenarArray(miVector,c);
+    //! Imprimimos sus valores
+
+    //? Recuerda que por defecto el array se hace con paso de parametros por referencia
+    //? Esto nos permite editarlo desde otra funcion
+
+    for (int x = 0; x < c; x++){
+        printf("%d",miVector[x]);
+    }
 
     return 0;
 }
