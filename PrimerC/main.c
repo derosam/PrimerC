@@ -1,20 +1,16 @@
-//
-//  main.c
-//  PrimerC
-//
-//  Created by david on 27/01/22.
-//
-// Proyecto subir github
+/* Sacar la hipotenusa de un triangulo rectangulo,
+pidiendo al usuario el valor de los 2 catetos*/
 
 #include <stdio.h>
+#include <math.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    float s;
-    int w=34;
-    char g[20]="David Rosas";
-    printf("Digita un numero flotante\n");
-    scanf("%f",&s);
-    printf("Has digitado %.2f te felicitamos %i , %s\n %.3f",s,w,g,s);
+int main(){
+    float cateto1,cateto2,hipotenusa;
+    printf("Escribe los valores de los catetos\n");
+    scanf("%f %f",&cateto1,&cateto2);
+
+    hipotenusa = sqrt(pow(cateto1,2)+ pow(cateto2,2));
+    printf("\nEl valor de la hipotenusa es: %.2f",hipotenusa);
+
     return 0;
 }
